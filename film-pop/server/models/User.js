@@ -2,12 +2,14 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 const bcrypt = require('bcrypt');
+const MovieList = require('./MovieList');
 
 const userSchema = new Schema({
     username: {
         type: String,
         required: true,
         trim: true,
+        minlength: 5,
     },
     email: {
         type: String,
@@ -18,7 +20,8 @@ const userSchema = new Schema({
         type: String,
         required: true,
         minlength: 5,
-    }
+    },
+    movieLists: [MovieList.schema]
 });
 
 // Set up pre-save middleware to create password
