@@ -40,4 +40,5 @@ const search = async (currentPage = 1) => {
     }
 }
 
+// export search function
 export default { search };
