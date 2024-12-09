@@ -1,48 +1,54 @@
 const typeDefs = `
-  type Movie {
-    _id: imdbID
-    username: String
-    description: String
-    image: String
-    genre: String
-    rating: Float
-  }
+    type Genre {
+      name: String
+    }
 
-  type User {
-    _id: ID
-    username: String
-    email: String
-  }
+    type Movie {
+      title: String
+      dateRelease: String
+      runTime: String
+      plot: String
+      poster: String
+      imdbRating: Int
+      metaRating: Int
+      genre: Genre
+    }
 
-  type Auth {
-    token: ID
-    user: User
-  }
+    type MovieList {
+      listName: String
+      user: User
+      movies: [Movie]
+    }
 
-  type Query {
-    genre: String
-    rating: Float
-    movies(genre: String, name: String, rating: Float): [Movie]
-    user: User
-  }
-
-  type Mutation {
-    addUser(
-      username: String!
-      email: String!
-      password: String!
-    ): Auth
-    addMovieToList(_id: imdbID!): Movie
-    createMovieList(listname: String!)
-    updateUser(
+    type User {
       username: String
       email: String
-      password: String
-    ): User
-    deleteMovieFromList(_id: imdbID!): Movie
-    deleteMovieList(_id: ID!)
-    login(email: String!, password: String!): Auth
-  }
+      movieLists: [MovieList]
+    }
+    
+    type Auth {
+      token: ID
+      user: User
+    }
+
+    type Query {
+      genres: [Genre]
+      movies: [Movie]
+      moviesByGenre(genre_id: String): [Movie]
+      moviesByRating(rating: Int): [Movie]
+      me: User
+    }
+    type Mutation {
+      addUser(
+        username: String!
+        email: String!
+        password: String!
+      ): Auth
+      createList(listName: String): MovieList
+      addMovieToList(movieListId: ID, movieId: ID): MovieList
+      deleteMovieFromList(movieListId: ID, movieId: ID): MovieList
+      login(email: String!, password: String!): Auth
+      }
 `;
 
 module.exports = typeDefs;
