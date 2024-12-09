@@ -27,7 +27,7 @@ const search = async (currentPage = 1) => {
         // determine number of pages of movies
         const totalPages = Math.ceil(movieResults / 10);
 
-        // return the movie data, current page, number of pages
+        // return the movie results, current page, number of pages
         return {
             results: response.data.Search, //Search is the array of movies within the data object
             currentPage,
