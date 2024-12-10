@@ -21,7 +21,12 @@ const userSchema = new Schema({
         required: true,
         minlength: 5,
     },
-    movieLists: [MovieList.schema]
+    movieLists: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: "MovieList", // need to refer to the MovieList model
+        },
+    ]
 });
 
 // Set up pre-save middleware to create password

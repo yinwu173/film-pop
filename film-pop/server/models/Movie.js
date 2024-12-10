@@ -26,9 +26,6 @@ const movieSchema = new Schema({
   imdbRating: {
     type: Number,
   },
-  metaRating: {
-    type: Number,
-  },
   genre: {
     type: Schema.Types.ObjectId,
     ref: "Genre",
