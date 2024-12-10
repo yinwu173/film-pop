@@ -1,5 +1,7 @@
 const User = require('./User');
-const Product = require('./Movie');
+const Movie = require('./Movie');
+const Genre = require('./Genre');
+const MovieList = require('./MovieList');
 
 
-module.exports = { User, Model };
+module.exports = { User, Movie, Genre, MovieList };
