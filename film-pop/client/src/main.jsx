@@ -1,16 +1,9 @@
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import './index.css'
-import "semantic-ui-css/semantic.min.css";
-
+console.log(3);
 import App from './App.jsx'
 import Home from './pages/Home.jsx'
-import Login from './pages/Login.jsx'
-import Signup from './pages/Signup.jsx'
-import Error from './pages/Error.jsx'
-import UserLists from './pages/UserLists.jsx'
-import SingleList from './pages/SingleList.jsx'
-
+console.log(6);
 const router = createBrowserRouter([
   {
     path: '/',
@@ -20,23 +13,11 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />
-      }, {
-        path: '/login',
-        element: <Login />
-      }, {
-        path: '/signup',
-        element: <Signup />
-      }, {
-        path: '/userlists',
-        element: <UserLists />
-      }, {
-        path: '/singlelist',
-        element: <SingleList />
-      }
+      },
     ]
   }
 ])
-
+console.log(20);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <RouterProvider router={router} />
