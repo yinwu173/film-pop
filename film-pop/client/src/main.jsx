@@ -8,7 +8,7 @@ import Home from './pages/Home.jsx'
 import Login from './pages/Login.jsx'
 import Signup from './pages/Signup.jsx'
 import Error from './pages/Error.jsx'
-import UserList from './pages/UserLists.jsx'
+import UserLists from './pages/UserLists.jsx'
 import SingleList from './pages/SingleList.jsx'
 
 const router = createBrowserRouter([

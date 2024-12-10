@@ -1,6 +1,6 @@
 // mod 22 act 26
 const models = require("../models");
-const db = require("../config/connection");
+const db = require("./connection");
 
 module.exports = async (modelName, collectionName) => {
   try {
