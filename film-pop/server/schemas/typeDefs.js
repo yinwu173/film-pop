@@ -36,7 +36,7 @@ const typeDefs = `
       movies: [Movie]
       moviesByGenre(genre_id: String): [Movie]
       moviesByRating(rating: Int): [Movie]
-      me: User
+      user: User
     }
     type Mutation {
       addUser(
