@@ -7,8 +7,6 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
-import Nav from './components/Nav';
-import { useState } from 'react'
 import './App.css'
 import "semantic-ui-css/semantic.min.css";
 
@@ -36,7 +34,6 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <div>
-        <Nav />
         <Outlet />
       </div>
     </ApolloProvider>
